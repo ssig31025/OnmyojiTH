@@ -5,13 +5,28 @@ interface SkillCardProps {
     skill: Skill;
 }
 
+import Image from "next/image";
+
+// ...
+
 export function SkillCard({ skill }: SkillCardProps) {
+    const isProd = process.env.NODE_ENV === 'production';
+    const basePath = isProd ? '/OnmyojiTH' : '';
+
+    // Fix image paths in description for GitHub Pages
+    const processedDescription = skill.description.replace(/src="\/images/g, `src="${basePath}/images`);
+
     return (
         <div className="rounded-lg border bg-card p-4 md:p-6">
             <div className="flex items-start gap-4">
-                <div className="h-12 w-12 shrink-0 rounded bg-muted flex items-center justify-center overflow-hidden border">
+                <div className="h-12 w-12 shrink-0 rounded bg-muted flex items-center justify-center overflow-hidden border relative">
                     {skill.icon ? (
-                        <img src={skill.icon} alt={skill.name} className="h-full w-full object-cover" />
+                        <Image
+                            src={skill.icon}
+                            alt={skill.name}
+                            fill
+                            className="object-cover"
+                        />
                     ) : (
                         <span className="text-xs font-bold text-muted-foreground">ICON</span>
                     )}
@@ -27,7 +42,7 @@ export function SkillCard({ skill }: SkillCardProps) {
                     </div>
                     <div
                         className="text-sm mt-2 leading-relaxed whitespace-pre-wrap [&>img]:inline-block [&>img]:h-5 [&>img]:w-5 [&>img]:align-sub [&>img]:mx-1"
-                        dangerouslySetInnerHTML={{ __html: skill.description }}
+                        dangerouslySetInnerHTML={{ __html: processedDescription }}
                     />
 
                     {skill.levelUpEffects.length > 0 && (
