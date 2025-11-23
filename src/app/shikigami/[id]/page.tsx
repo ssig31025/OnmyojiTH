@@ -33,7 +33,7 @@ export default async function ShikigamiDetailPage({ params }: { params: Promise<
           </Link>
 
           <div className="flex flex-col md:flex-row gap-8 items-start">
-            <div className="w-32 h-32 md:w-40 md:h-40 rounded-xl bg-muted flex items-center justify-center shrink-0 border-2 border-primary/20 overflow-hidden">
+            <div className="w-32 h-32 md:w-40 md:h-40 rounded-xl bg-muted flex items-center justify-center shrink-0 border-2 border-primary/20 overflow-hidden relative">
               {shikigami.image || shikigami.icon ? (
                 <Image
                   src={shikigami.image || shikigami.icon}

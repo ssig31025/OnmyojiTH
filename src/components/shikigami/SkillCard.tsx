@@ -14,7 +14,11 @@ export function SkillCard({ skill }: SkillCardProps) {
     const basePath = isProd ? '/OnmyojiTH' : '';
 
     // Fix image paths in description for GitHub Pages
-    const processedDescription = skill.description.replace(/src="\/images/g, `src="${basePath}/images`);
+    // This regex handles src="/images..." and src='/images...'
+    const processedDescription = skill.description.replace(/src=["']\/images/g, (match) => {
+        const quote = match.charAt(4); // " or '
+        return `src=${quote}${basePath}/images`;
+    });
 
     return (
         <div className="rounded-lg border bg-card p-4 md:p-6">
