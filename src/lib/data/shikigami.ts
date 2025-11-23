@@ -160,11 +160,11 @@ export const shikigamiData: Shikigami[] = [
                 description: `The tides of battle turn.
 Exclusive effect. At the start of the battle, Taira no Masakado's starting ATK exceeds 700% DEF, enters Offensive Stance; otherwise enters Defensive Stance. Wields artifact Futsunomitama. [Cast] Switches stance.
 
-<b>Offensive Stance (攻击架势)</b> <img src="/images/shikigami/taira-no-masakado/Offensive Stance.webp" />: When casting Eternal Blazing Sun, enhances Futsunomitama once.
+<b>Offensive Stance (攻击架势)</b> <img src="/images/shikigami/taira-no-masakado/offensive-stance.webp" />: When casting Eternal Blazing Sun, enhances Futsunomitama once.
 
-<b>Defensive Stance (防守架势)</b> <img src="/images/shikigami/taira-no-masakado/Defensive Stance.webp" />: When attacked, recovers HP equal to 500% of starting DEF (up to 70% of starting ATK) and enhances Futsunomitama once (can be enhanced once per turn).
+<b>Defensive Stance (防守架势)</b> <img src="/images/shikigami/taira-no-masakado/defensive-stance.webp" />: When attacked, recovers HP equal to 500% of starting DEF (up to 70% of starting ATK) and enhances Futsunomitama once (can be enhanced once per turn).
 
-<b>Futsunomitama</b> <img src="/images/shikigami/taira-no-masakado/Futsunomitama.webp" />: After every 3 enhancements, Taira no Masakado immediately enters Rift in Time.
+<b>Futsunomitama</b> <img src="/images/shikigami/taira-no-masakado/futsunomitama.webp" />: After every 3 enhancements, Taira no Masakado immediately enters Rift in Time.
 
 <b>Transferred Damage</b>: One of the types of damage, cannot crit, is due to some shikigami skills being able to distribute damage, such as Shouzu's link and Ushi no Toki's doll.
 
@@ -190,7 +190,7 @@ Taira no Masakado attacks all enemies 3 times, dealing 64% ATK damage each hit. 
 
 <b>Ruin Damage</b>: One of the types of damage, ignores DEF and damage reduction effects.
 
-<b>Futsunomitama</b> <img src="/images/shikigami/taira-no-masakado/Futsunomitama.webp" />: After every 3 enhancements, Taira no Masakado immediately enters Rift in Time.
+<b>Futsunomitama</b> <img src="/images/shikigami/taira-no-masakado/futsunomitama.webp" />: After every 3 enhancements, Taira no Masakado immediately enters Rift in Time.
 
 <b>Rift in Time (时之隙)</b>: Traverse in the rupture of time and space where actions are not counted towards a turn and are regarded as outside of turn actions.`,
                 levelUpEffects: [
