@@ -15,8 +15,11 @@ export function SkillCard({ skill }: SkillCardProps) {
 
     // Fix image paths in description for GitHub Pages
     // This regex handles src="/images..." and src='/images...'
-    const processedDescription = skill.description.replace(/src=["']\/images/g, (match) => {
+    const processedDescription = skill.description.replace(/src=["'](\/?)images/g, (match, slash) => {
         const quote = match.charAt(4); // " or '
+        // Ensure we don't double-slash if basePath is empty, but basePath usually doesn't have trailing slash
+        // If slash is present in match, we keep it or replace it?
+        // We want: src="/OnmyojiTH/images..."
         return `src=${quote}${basePath}/images`;
     });
 
