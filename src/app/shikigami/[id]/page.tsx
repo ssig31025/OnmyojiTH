@@ -3,6 +3,7 @@ import { SkillCard } from "@/components/shikigami/SkillCard";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, Shield, Sword, Zap, Heart, Wind } from "lucide-react";
 import { notFound } from "next/navigation";
 
@@ -34,10 +35,11 @@ export default async function ShikigamiDetailPage({ params }: { params: Promise<
           <div className="flex flex-col md:flex-row gap-8 items-start">
             <div className="w-32 h-32 md:w-40 md:h-40 rounded-xl bg-muted flex items-center justify-center shrink-0 border-2 border-primary/20 overflow-hidden">
               {shikigami.image || shikigami.icon ? (
-                <img
+                <Image
                   src={shikigami.image || shikigami.icon}
                   alt={shikigami.name}
-                  className="h-full w-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               ) : (
                 <span className="text-4xl font-bold opacity-20">{shikigami.name[0]}</span>

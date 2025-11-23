@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Shikigami } from "@/types/shikigami";
 import { Badge } from "@/components/ui/badge";
 
@@ -22,10 +23,11 @@ export function ShikigamiCard({ data }: ShikigamiCardProps) {
             <div className="relative overflow-hidden rounded-xl border bg-card transition-all hover:shadow-lg hover:-translate-y-1">
                 <div className="aspect-square bg-muted flex items-center justify-center text-muted-foreground relative">
                     {data.icon || data.image ? (
-                        <img
+                        <Image
                             src={data.icon || data.image}
                             alt={data.name}
-                            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                            fill
+                            className="object-cover transition-transform duration-300 group-hover:scale-105"
                         />
                     ) : (
                         <span className="text-4xl font-bold opacity-20">{data.name[0]}</span>
